@@ -47,9 +47,9 @@ function initializeServiceWorker() {
   // B1. TODO - Check if 'serviceWorker' is supported in the current browser
   if("serviceWorker" in navigator){
     try{
-      self.addEventListener('load', async()=>{
-        const registration = await navigator.serviceWorker.register('/sw.js', {
-          scope: '/',
+      window.addEventListener('load', async()=>{
+        const registration = await navigator.serviceWorker.register('./sw.js', {
+          scope: './',
         });
         
         if(registration.active){
